@@ -6,3 +6,8 @@
 .Header {
   text-align: center;
 }
+
+.ToDoItem { 
+  user-select: none;
+  cursor: pointer;
+}
