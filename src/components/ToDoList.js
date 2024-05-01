@@ -1,3 +1,18 @@
+import ToDoItem from './ToDoItem';
+
 export default function ToDoList() {
-	return <div className="ToDoList">Nothing to do buddy. Sleep!!</div>;
+	const toDoListItems = [
+		'Read SpringBoot',
+		'Complete Assignments',
+		'Prepare breakfast',
+		'Sleep for 2 hours',
+		'Take a shower',
+	];
+	return (
+		<div className="ToDoList">
+			{toDoListItems.map((toDoItem) => (
+				<ToDoItem key={toDoItem} task={toDoItem} />
+			))}
+		</div>
+	);
 }
