@@ -35,12 +35,14 @@ export default function ToDoList() {
 	};
 
 	const noItemsElement = () => {
-		return <i>{noItemsText} </i>;
+		return <i className='NoItemsElement'>{noItemsText} </i>;
 	};
 
 	return (
 		<>
-			<div className="ToDoList">{todoItems.length > 0 ? getToDoItems() : noItemsElement()}</div>
+			<div>
+				<ol className="ToDoList">{todoItems.length > 0 ? getToDoItems() : noItemsElement()}</ol>
+			</div>
 			<div>
 				<button className="ClearAllBtn" onClick={removeCompletedToDosHandler}>
 					Remove Completed
