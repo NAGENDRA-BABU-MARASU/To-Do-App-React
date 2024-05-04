@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ToDoItem from './ToDoItem';
+import RemoveTodos from './RemoveTodos';
 
 export default function ToDoList() {
 	const toDoListItems = [
@@ -11,11 +12,6 @@ export default function ToDoList() {
 	];
 	const [todoItems, setTodoItems] = useState(toDoListItems);
 	const noItemsText = 'Nothing to do buddy. Sleep!';
-
-	const removeCompletedToDosHandler = () => {
-		const updatedTodoItems = todoItems.filter((toDoItem) => toDoItem.completed === false);
-		setTodoItems(updatedTodoItems);
-	};
 
 	const onToDoItemClickHandler = (toDoId) => {
 		const updatedTodos = [...todoItems];
@@ -35,7 +31,7 @@ export default function ToDoList() {
 	};
 
 	const noItemsElement = () => {
-		return <i className='NoItemsElement'>{noItemsText} </i>;
+		return <i className="NoItemsElement">{noItemsText} </i>;
 	};
 
 	return (
@@ -44,9 +40,7 @@ export default function ToDoList() {
 				<ol className="ToDoList">{todoItems.length > 0 ? getToDoItems() : noItemsElement()}</ol>
 			</div>
 			<div>
-				<button className="ClearAllBtn" onClick={removeCompletedToDosHandler}>
-					Remove Completed
-				</button>
+				<RemoveTodos todoItems={todoItems} setTodoItems={setTodoItems} />
 			</div>
 		</>
 	);
