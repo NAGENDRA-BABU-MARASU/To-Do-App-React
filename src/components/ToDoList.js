@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ToDoItem from './ToDoItem';
-import RemoveTodos from './RemoveTodos';
+import RemoveTodosButton from './RemoveTodosButton';
 
 export default function ToDoList() {
 	const toDoListItems = [
@@ -40,7 +40,7 @@ export default function ToDoList() {
 				<ol className="ToDoList">{todoItems.length > 0 ? getToDoItems() : noItemsElement()}</ol>
 			</div>
 			<div>
-				<RemoveTodos todoItems={todoItems} setTodoItems={setTodoItems} />
+				<RemoveTodosButton todoItems={todoItems} setTodoItems={setTodoItems} />
 			</div>
 		</>
 	);

@@ -1,6 +1,5 @@
-export default function RemoveTodos({ todoItems, setTodoItems }) {
-	
-  const removeCompletedTodosHandler = () => {
+export default function RemoveTodosButton({ todoItems, setTodoItems }) {
+	const removeCompletedTodosHandler = () => {
 		const updatedTodoItems = todoItems.filter((toDoItem) => toDoItem.completed === false);
 		setTodoItems(updatedTodoItems);
 	};
