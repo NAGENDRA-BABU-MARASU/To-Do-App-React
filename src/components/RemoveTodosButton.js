@@ -1,6 +1,6 @@
 export default function RemoveTodosButton({ todoItems, setTodoItems }) {
 	const removeCompletedTodosHandler = () => {
-		const updatedTodoItems = todoItems.filter((toDoItem) => toDoItem.completed === false);
+		const updatedTodoItems = todoItems.filter((toDoItem) => toDoItem.isCompleted === false);
 		setTodoItems(updatedTodoItems);
 	};
 
@@ -8,7 +8,7 @@ export default function RemoveTodosButton({ todoItems, setTodoItems }) {
 		setTodoItems([]);
 	};
 
-	const isAnyTodoCompleted = todoItems.some((todoItem) => todoItem.completed);
+	const isAnyTodoCompleted = todoItems.some((todoItem) => todoItem.isCompleted);
 
 	const buttonText = isAnyTodoCompleted ? 'Remove Completed' : 'Empty';
 	const onClickHandler = isAnyTodoCompleted ? removeCompletedTodosHandler : clearAllTodosHandler;

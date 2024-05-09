@@ -4,11 +4,11 @@ import RemoveTodosButton from './RemoveTodosButton';
 
 export default function ToDoList() {
 	const toDoListItems = [
-		{ id: 0, taskDescription: 'Read SpringBoot', completed: false },
-		{ id: 1, taskDescription: 'Complete Assignments', completed: false },
-		{ id: 2, taskDescription: 'Prepare breakfast', completed: false },
-		{ id: 3, taskDescription: 'Sleep for 2 hours', completed: false },
-		{ id: 4, taskDescription: 'Take a shower', completed: false },
+		{ id: 0, taskDescription: 'Read SpringBoot', isCompleted: false },
+		{ id: 1, taskDescription: 'Complete Assignments', isCompleted: false },
+		{ id: 2, taskDescription: 'Prepare breakfast', isCompleted: false },
+		{ id: 3, taskDescription: 'Sleep for 2 hours', isCompleted: false },
+		{ id: 4, taskDescription: 'Take a shower', isCompleted: false },
 	];
 	const [todoItems, setTodoItems] = useState(toDoListItems);
 	const noItemsText = 'Nothing to do buddy. Sleep!';
@@ -17,7 +17,7 @@ export default function ToDoList() {
 		const updatedTodos = [...todoItems];
 		updatedTodos.map((toDoItem) => {
 			if (toDoItem.id === toDoId) {
-				toDoItem.completed = !toDoItem.completed;
+				toDoItem.isCompleted = !toDoItem.isCompleted;
 			}
 			return toDoItem;
 		});

@@ -5,7 +5,7 @@ export default function ToDoItem({ toDoItem, toDoItemClickHandler }) {
 
 	return (
 		<li className="ToDoItem" onClick={onClickHandler}>
-			{toDoItem.completed ? <strike>{toDoItem.taskDescription}</strike> : toDoItem.taskDescription}
+			{toDoItem.isCompleted ? <strike>{toDoItem.taskDescription}</strike> : toDoItem.taskDescription}
 		</li>
 	);
 }
